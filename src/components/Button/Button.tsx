@@ -1,5 +1,6 @@
-import { ButtonStyled } from "./Button.styled";
 import Icon from "../Icon/Icon";
+
+import { ButtonStyled } from "./Button.styled";
 
 interface Props {
   label?: string;
@@ -9,9 +10,11 @@ interface Props {
   color?: string;
   fillRule?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  className?: string
-  path?:string
-  type?: "button" | "submit" | "reset" 
+  className?: string;
+  path?: string;
+  type?: "button" | "submit" | "reset";
+  stroke?:string;
+  strokeWidth?: string;
 }
 
 const Button: React.VFC<Props> = ({
@@ -23,8 +26,9 @@ const Button: React.VFC<Props> = ({
   onClick,
   fillRule = "nonzero",
   className,
-  path,
-  type
+  type,
+  stroke,
+  strokeWidth,
 }) => {
   return (
     <ButtonStyled onClick={onClick} className={className} type={type}>
@@ -34,6 +38,8 @@ const Button: React.VFC<Props> = ({
         width={width}
         height={height}
         fillRule={fillRule}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
       />
       {label}
     </ButtonStyled>
