@@ -1,8 +1,8 @@
 import { Props } from "./customTypes";
 import { BadgeStyled } from "./Badge.styled";
 
-const Badge = ({ label }: Props) => {
-  return <BadgeStyled>{label}</BadgeStyled>;
+const Badge = ({ text }: Props) => {
+  return <BadgeStyled>{text}</BadgeStyled>;
 };
 
 export default Badge;
